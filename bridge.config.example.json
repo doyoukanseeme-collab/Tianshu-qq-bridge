@@ -1,0 +1,31 @@
+{
+  "tianshu": {
+    "serverInfoPath": "",
+    "timeoutMs": 15000
+  },
+  "onebot": {
+    "mode": "forward",
+    "forwardUrl": "ws://127.0.0.1:3001",
+    "reversePort": 6700,
+    "reverseHost": "127.0.0.1",
+    "path": "/onebot",
+    "accessToken": "",
+    "napcatRoot": "",
+    "qqPath": "",
+    "napcatConfigDir": ""
+  },
+  "qq": {
+    "allowUsers": [],
+    "allowGroups": [],
+    "botAccount": null
+  },
+  "push": {
+    "level": "final",
+    "maxChars": 900,
+    "renderMarkdown": true,
+    "idleFlushMs": 15000,
+    "autoForward": true,
+    "scanIntervalMs": 20000
+  },
+  "statePath": "./state.json"
+}

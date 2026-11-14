@@ -1,0 +1,38 @@
+{
+  "name": "tianshu-qq-bridge",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "把天枢（Tianshu）会话接到 QQ：项目进展推到手机，手机指令回灌到对应会话",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "keywords": [
+    "tianshu",
+    "qq",
+    "onebot",
+    "onebot11",
+    "napcat",
+    "bridge",
+    "sse"
+  ],
+  "files": [
+    "src",
+    "vendor",
+    "README.md",
+    "LICENSE"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/doyoukanseeme-collab/Tianshu-qq-.git"
+  },
+  "bugs": {
+    "url": "https://github.com/doyoukanseeme-collab/Tianshu-qq-/issues"
+  },
+  "homepage": "https://github.com/doyoukanseeme-collab/Tianshu-qq-#readme",
+  "scripts": {
+    "start": "node src/index.js",
+    "launch": "node src/launch.js",
+    "test": "node --test test/unit.test.js test/attachments.test.js test/markdown.test.js test/mermaid.test.js test/question.test.js test/routing.test.js test/integration.test.js test/launch.test.js test/delivery.test.js"
+  }
+}
