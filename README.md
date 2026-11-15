@@ -47,10 +47,39 @@ flowchart LR
 
 ### 1. 装 QQ 协议端（NapCat）
 
-你机器上要有 QQ NT，但还缺协议端。任选一种：
+> ⚠️ **上游已停止维护**：NapCat 官方仓库（`NapNeko/NapCatQQ`）已于 2026-11 宣布 "Ending"，
+> 代码和 Releases 都已清空。下面提供的是**社区备份镜像**，非官方，请自行评估风险。
 
-- **NapCat.Framework（推荐，独立版）**：从 [NapCat 仓库](https://github.com/NapNeko/NapCatQQ/releases) 下载 `NapCat.Framework.zip`，解压后双击 `napiLoader.bat`，用手机 QQ 扫码登录一个**小号**。
-- **NapCat.Shell**：作为插件装进现有 QQ NT。
+你机器上要有 QQ NT，但还缺协议端。两种方式：
+
+**方式 A：用一键安装脚本（推荐，Windows）**
+
+```bat
+scripts\install-napcat.bat
+```
+
+脚本会：检查环境 → 从社区镜像下载 `NapCat.Framework.zip` → 校验 → 解压 →
+提示后续步骤。默认装到 `D:\NapCat`，可传参数改：
+
+```bat
+scripts\install-napcat.bat E:\Tools\NapCat
+```
+
+或用自有镜像：
+
+```bat
+set NAPCAT_MIRROR=https://your.mirror/NapCat.Framework.zip
+scripts\install-napcat.bat
+```
+
+> 脚本**只下载不打包**，仓库里不含 NapCat 任何二进制。下载源是社区备份
+> （当前为 [Creep-debug/NapCatQQ](https://github.com/Creep-debug/NapCatQQ/releases)），
+> 非官方、无许可证声明，本项目不对其做任何担保。
+
+**方式 B：手动下载**
+
+从社区镜像 [Creep-debug/NapCatQQ](https://github.com/Creep-debug/NapCatQQ/releases)
+下载 `NapCat.Framework.zip`，解压后双击 `napiLoader.bat`，用手机 QQ 扫码登录一个**小号**。
 
 解压位置随意。`napiLoader.bat` 会从注册表自动找到 QQ 安装路径，无需手工填。
 
