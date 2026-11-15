@@ -108,6 +108,28 @@ node src/index.js
 npm run launch
 ```
 
+`launch.js` 的常用选项：
+
+| 选项 | 作用 |
+|---|---|
+| `--kill-qq` | 检测到「裸 QQ 进程」（QQ 自己开着、没被 NapCat 注入）时先结束它，再重新拉起。否则会停下提示你手动关 QQ |
+| `--no-napcat` | 只等待，不自动拉起 NapCat（NapCat 你自己起） |
+| `--timeout <秒>` | 等 QQ 上线的上限，默认 1200 |
+| `--interval <秒>` | 轮询间隔，默认 3 |
+
+> **为什么有时要 `--kill-qq`**：QQ 是单实例，如果它开机自启先占住了、没走 NapCat 注入，桥会提示「检测到裸 QQ 进程」。加 `--kill-qq` 让它结束裸 QQ 后由 NapCat 重新拉起并注入。
+
+### 开机自启（可选）
+
+仓库带了一个 `autostart/` 目录：
+
+- `autostart/napcat-autostart.bat`：静默跑 `launch.js`，可加进 Windows 开机自启（注册表 `HKCU\...\Run`）。
+- `autostart/restore-qq-autostart.bat`：恢复 QQ 自己的开机自启（如果你之前禁用了它）。
+
+启用自启前，**先禁用 QQ 自己的开机自启**（否则开机 QQ 抢先占住单实例，NapCat 注入会落空）。自启脚本执行结果写在 `autostart/last-run.log`，出问题先看它。
+
+> ⚠️ NapCat 只负责注入，登录哪个号由 QQ 的「上次登录态」决定。要开机就自动登对号，关机前确保 QQ 停在你想要的那个号上。
+
 正常的启动日志长这样：
 
 ```
@@ -264,7 +286,7 @@ npm test
 
 ## 已知局限
 
-1. **没有内置开机自启**。需要常驻就自己配计划任务 / systemd。
+1. **没有内置开机自启**。需要常驻就自己配计划任务 / systemd（Windows 可参考上文「开机自启」用 `autostart/` 目录里的 bat）。
 2. **mermaid 之外没做代码高亮**。代码块有背景和等宽字体，但没有 token 着色。
 3. **渲染失败降级为纯文本**（保留原文但丢样式）。Markdown 渲染依赖系统 Chrome/Edge 与 `playwright-core`。
 4. **分支问答的回答走普通 prompt**，不是专用接口——天枢只有 `interventions/:id/answer`（管 approve/deny），没有「回答问题」路由。
