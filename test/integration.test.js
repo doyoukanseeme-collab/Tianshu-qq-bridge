@@ -15,8 +15,10 @@ import { Store } from '../src/state.js';
 import { StreamManager } from '../src/stream.js';
 import { dispatchText } from '../src/commands.js';
 
-const SERVER_INFO = 'D:/tianshu/TianshuData/.rivet/server-info.json';
-const TIANSHU_UP = existsSync(SERVER_INFO);
+// 自动探测天枢的 server-info.json，避免在测试里硬编码某个人的安装路径。
+// 探测不到（天枢没装/没运行）时 TIANSHU_UP 为 false，依赖真天枢的用例会自动跳过。
+const SERVER_INFO = findServerInfo();
+const TIANSHU_UP = Boolean(SERVER_INFO) && existsSync(SERVER_INFO);
 
 /** 起一个假 NapCat：收 action 回 ok，可主动推事件。不等连接——连接由桥接器发起。 */
 async function startMockNapCat() {
