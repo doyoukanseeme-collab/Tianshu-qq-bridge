@@ -24,12 +24,12 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/doyoukanseeme-collab/Tianshu-qq-.git"
+    "url": "git+https://github.com/doyoukanseeme-collab/Tianshu-qq-bridge.git"
   },
   "bugs": {
-    "url": "https://github.com/doyoukanseeme-collab/Tianshu-qq-/issues"
+    "url": "https://github.com/doyoukanseeme-collab/Tianshu-qq-bridge/issues"
   },
-  "homepage": "https://github.com/doyoukanseeme-collab/Tianshu-qq-#readme",
+  "homepage": "https://github.com/doyoukanseeme-collab/Tianshu-qq-bridge#readme",
   "scripts": {
     "start": "node src/index.js",
     "launch": "node src/launch.js",
