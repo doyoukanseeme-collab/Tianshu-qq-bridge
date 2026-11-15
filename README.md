@@ -1,5 +1,10 @@
 # 天枢 ⇄ QQ 桥
 
+> **Tianshu QQ Bridge** — relay your Tianshu AI coding-agent session progress to your phone via QQ,
+> and send commands back from QQ into the session. Built on OneBot v11 / NapCat over WebSocket,
+> HTTP + SSE client, Node.js, zero runtime dependencies, fully self-hosted on `127.0.0.1`.
+> Keywords: qq bot, onebot, napcat, chatbot bridge, remote control, AI agent, LLM, automation.
+
 把[天枢（Tianshu）](https://tianshu.ai) 会话接到 QQ：**项目进展推到手机，手机指令回灌到对应会话**。不用再坐在电脑前等下一轮。
 
 零运行时依赖，只需要 Node ≥ 22 和一个 QQ 协议端。
